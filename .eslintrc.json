@@ -1,0 +1,64 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:security/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "prettier",
+        "react",
+        "simple-import-sort"
+    ],
+    "rules": {
+        "import/no-absolute-path": "off",
+        "import/prefer-default-export": "off",
+        "no-restricted-syntax": [
+            "error",
+            {
+                "selector": "ForInStatement",
+                "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+            },
+            {
+                "selector": "LabeledStatement",
+                "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+            },
+            {
+                "selector": "WithStatement",
+                "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+            }
+        ],
+        "no-shadow": "off",
+        "no-underscore-dangle": "off",
+        "no-use-before-define": ["error", { "functions": false }],
+        "prefer-object-spread": "off",
+        "prettier/prettier": "error",
+        "react/no-unused-class-component-methods": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": {
+            "map": [
+                ["/src", "./src"]
+            ],
+            "extensions": [".js", ".json"]
+            }
+        }
+    }
+}
