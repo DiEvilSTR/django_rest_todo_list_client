@@ -8,6 +8,7 @@
     "extends": [
         "plugin:react/recommended",
         "airbnb",
+        "plugin:react/jsx-runtime",
         "plugin:security/recommended",
         "plugin:prettier/recommended"
     ],
@@ -47,6 +48,7 @@
         "no-use-before-define": ["error", { "functions": false }],
         "prefer-object-spread": "off",
         "prettier/prettier": "error",
+        "react/jsx-filename-extension": "off",
         "react/no-unused-class-component-methods": "off",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error"

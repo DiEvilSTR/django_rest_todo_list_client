@@ -1,6 +1,12 @@
-import { IS_DEV_MODE, IS_PRODUCTION_MODE, IS_TEST_MODE } from './common';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-console.log('ENV', { IS_DEV_MODE, IS_TEST_MODE, IS_PRODUCTION_MODE });
+import { createRoot } from 'react-dom/client';
+
+import { App } from './App';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<App />);
 
 if (module.hot) {
   module.hot.accept();
