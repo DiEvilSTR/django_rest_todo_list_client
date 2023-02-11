@@ -8,6 +8,7 @@
     "extends": [
         "plugin:react/recommended",
         "airbnb",
+        "plugin:react-hooks/recommended",
         "plugin:react/jsx-runtime",
         "plugin:security/recommended",
         "plugin:prettier/recommended"
@@ -23,17 +24,16 @@
     "plugins": [
         "prettier",
         "react",
+        "react-hooks",
         "simple-import-sort"
     ],
     "rules": {
+        "security/detect-object-injection": "off",
+        "guard-for-in": "off",
         "import/no-absolute-path": "off",
         "import/prefer-default-export": "off",
         "no-restricted-syntax": [
             "error",
-            {
-                "selector": "ForInStatement",
-                "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
-            },
             {
                 "selector": "LabeledStatement",
                 "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
@@ -48,7 +48,12 @@
         "no-use-before-define": ["error", { "functions": false }],
         "prefer-object-spread": "off",
         "prettier/prettier": "error",
+        "react/forbid-prop-types": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": [1, { "enableDangerousAutofixThisMayCauseInfiniteLoops": true }],
         "react/jsx-filename-extension": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/require-default-props": "off",
         "react/no-unused-class-component-methods": "off",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error"
